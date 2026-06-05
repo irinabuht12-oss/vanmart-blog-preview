@@ -1,0 +1,816 @@
+#pa-modal h2,
+#pa-modal h3,
+#pa-modal h4 {
+  font-family: 'Mulish', Helvetica, Arial, sans-serif !important;
+  display: block !important;
+  font-weight: bold !important;
+  letter-spacing: initial !important;
+  margin: 0.8em 0 !important;
+  text-transform: none !important;
+}
+
+#pa-modal h2 {
+  font-size: 1.5em !important;
+}
+#pa-modal h3 {
+  margin-top: 25px !important;
+  font-size: 1.17em !important;
+}
+#pa-modal h4 {
+  margin-top: 27px !important;
+  font-size: 1em !important;
+}
+#pa-modal div:empty {
+  display: initial !important;
+}
+#pa-modal h4.pa-no-timeslots {
+  text-align: center !important;
+  margin: 0px !important;
+  color: var(--pa-button-color) !important;
+}
+
+#pa-modal #pa-product-title {
+  display: flex !important;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#pa-modal #pa-product-title .pa-merchant-logo {
+  display: block !important;
+  height: 60px;
+  width: 60px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+}
+
+.pa-transparent-overlay {
+  border: none;
+  background: none;
+  display: block !important;
+  opacity: 0;
+  position: absolute;
+  z-index: 9999999;
+  cursor: pointer;
+}
+
+/* The Modal (background) */
+.pa-modal-background {
+  display: none; /* Hidden by default */
+  align-items: center;
+  position: fixed; /* Stay in place */
+  z-index: 2147483647; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  color: black;
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.6); /* Black w/ opacity */
+  box-shadow: 0 1px 8px 0 rgb(0 0 0 / 8%);
+}
+
+/* Modal Content */
+#pa-modal {
+  position: relative;
+  font-family: 'Mulish', Helvetica, Arial, sans-serif !important;
+  line-height: 1.5 !important;
+  font-size: 16px !important;
+  background-color: #fefefe;
+  border: 2px solid #eee;
+  border-radius: 5px;
+  margin: auto;
+  display: flex;
+  flex: 1 1 auto;
+  max-width: 681px;
+  min-height: 550px;
+  transition: all 0.22s ease-out;
+  flex-wrap: wrap;
+}
+
+#pa-modal button,
+#pa-modal input,
+#pa-modal textarea,
+#pa-modal select {
+  font-family: 'Mulish', Helvetica, Arial, sans-serif !important;
+  line-height: 1.3 !important;
+  font-size: 14px !important;
+}
+
+#pa-modal,
+#pa-modal div {
+  box-sizing: content-box !important;
+}
+
+#pa-modal .pa-mobile-close-button {
+  position: absolute;
+  top: 9px;
+  left: 10px;
+  cursor: pointer;
+  display: none;
+}
+
+.pa-cancel,
+.pa-reschedule-form,
+.pa-reschedule-confirmation {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 260px;
+  padding-bottom: 2em !important;
+  gap: 20px;
+}
+
+#pa-confirmation-error-message,
+#pa-cancel-error-message,
+#pa-reschedule-error-message,
+.pa-reschedule-error p {
+  background-color: #b2000010;
+  border: 1px solid #b90000;
+  border-radius: 4px;
+  color: #c70000;
+  display: none;
+  font-size: 14px;
+  padding: 1em;
+}
+
+#pa-confirmation-success-message {
+  text-align: center;
+}
+
+#pa-confirmation-success-message,
+#pa-cancel-success-message {
+  display: none;
+}
+
+.pa-booking-info,
+.pa-timeslot-picker,
+.pa-cancel,
+.pa-reschedule,
+.pa-confirmation,
+.pa-custom-questions-modal,
+.pa-deposit-modal {
+  padding: 0 20px;
+}
+
+.pa-confirmation,
+.pa-custom-questions-modal,
+.pa-deposit-modal {
+  width: 100%;
+}
+
+#pa-modal input[type='submit'],
+.pa-next-button,
+.pa-back-button {
+  margin-top: 0;
+  margin-bottom: 10px;
+  margin-left: 0;
+  max-width: fit-content;
+}
+
+.pa-form-actions {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 10px !important;
+}
+
+.pa-booking-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 260px;
+  border-right: 1px solid var(--text-color-level3, rgba(26, 26, 26, 0.1));
+  overflow-y: auto;
+  padding-bottom: 2em;
+  transition: all 0.22s ease-out;
+}
+
+.pa-booking-info h3#pa-former-booking-info-header {
+  color: #808080;
+  font-size: 14px !important;
+  margin-bottom: 0 !important;
+}
+
+.pa-label {
+  display: flex;
+  font-weight: bold !important;
+  gap: 10px;
+}
+.pa-label div:first-child {
+  height: 24px; /* line-height * font-size = 1.5 * 16 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pa-timeslot-picker .pa-timezone {
+  margin-top: 20px;
+}
+.pa-timezone {
+  display: flex;
+  gap: 10px;
+}
+.pa-timezone img {
+  filter: brightness(0%);
+}
+#pa-member-container {
+  display: flex;
+  flex-direction: column;
+}
+.pa-duration {
+  color: grey;
+}
+.pa-duration img {
+  filter: brightness(149%);
+}
+.pa-location img {
+  filter: brightness(0%);
+}
+.pa-note {
+  margin-top: 10px;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.pa-timeslot-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.pa-calendar {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+}
+#pa-timeslots {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+#pa-timeslots-list {
+  display: flex;
+  flex-direction: column;
+  width: 221px;
+  gap: 10px;
+  max-height: 460px;
+  overflow-y: scroll;
+  padding-bottom: 10px;
+  padding-right: 4px;
+}
+.pa-timeslot {
+  display: flex;
+  gap: 10px;
+}
+.pa-timeslot > div {
+  flex-grow: 1;
+}
+
+.pa-timeslot-btn,
+.pa-timeslot-atc,
+.pa-timeslot-confirm {
+  display: block !important;
+  width: 100% !important;
+}
+
+.pa-timeslot-btn {
+  font-weight: bold;
+  background-color: white !important;
+  border: 1px solid var(--pa-button-color) !important;
+  color: var(--pa-button-color) !important;
+  border-radius: 5px !important;
+  padding: 10px !important;
+  text-align: center !important;
+  cursor: pointer;
+}
+.pa-timeslot-btn:hover {
+  border-color: var(--pa-hightlight-color) !important;
+  color: var(--pa-hightlight-color) !important;
+}
+
+.pa-capacity-line {
+  font-weight: normal !important;
+  color: #999 !important;
+  font-size: 0.85em !important;
+}
+
+.pa-timeslot-atc,
+.pa-timeslot-confirm,
+.pa-next-button,
+#pa-modal input[type='submit'] {
+  border: 0px !important;
+  background-color: var(--pa-button-color) !important;
+  border-radius: 5px !important;
+  padding: 10px !important;
+  text-align: center !important;
+  cursor: pointer !important;
+  color: white !important;
+}
+
+.pa-back-button {
+  border: 1px solid #ccc !important;
+  background-color: white !important;
+  border-radius: 5px !important;
+  padding: 10px !important;
+  color: #888 !important;
+  text-align: center !important;
+  cursor: pointer !important;
+}
+
+.pa-timeslot-atc:hover,
+.pa-timeslot-confirm:hover,
+#pa-modal input[type='submit']:hover {
+  background-color: var(--pa-hightlight-color) !important;
+}
+
+.pa-timeslot-full .pa-timeslot-btn {
+  border: 1px solid #bbb !important;
+}
+
+.pa-timeslot-full .pa-timeslot-btn,
+.pa-timeslot-full .pa-capacity-line {
+  color: #bbb !important;
+}
+
+.pa-reschedule.pa-timeslot-picker h5#pa-reschedule-appointment {
+  color: #2a2d3975;
+  font-size: 0.75em !important;
+  font-weight: normal !important;
+  margin-top: 25px !important;
+  margin-bottom: 0 !important;
+}
+
+.pa-reschedule.pa-timeslot-picker h3#pa-select-datetime {
+  margin-top: 0 !important;
+}
+
+#pa-modal select {
+  max-width: 200px;
+}
+
+.pa-branding {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  z-index: 1;
+  width: 125px;
+  height: 125px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: all 0.1s ease-in;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.pa-branding a {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.pa-branding .pa-banner {
+  position: relative;
+  top: 15px;
+  left: -11px;
+  z-index: 1;
+  display: block;
+  width: 160px;
+  width: 211px;
+  padding: 9px 0 6px;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  background-color: #757c82;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  transform: rotate(45deg);
+  transition: all 0.1s ease-in;
+  pointer-events: auto;
+}
+
+.pa-branding .pa-banner .pa-powered-by {
+  margin-left: -7px;
+  color: #f2f2f2;
+  font-size: 8px;
+  text-transform: uppercase;
+}
+
+.pa-branding .pa-banner .pa-propel-brand {
+  margin-left: -7px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.pa-unavailable {
+  color: rgb(179, 179, 179);
+}
+.pa-timeslot-picker .pa-timezone,
+.pa-legend {
+  font-size: 13px !important;
+}
+.pa-legend {
+  margin-top: 10px;
+}
+.pa-legend > span:first-child {
+  margin-right: 30px;
+}
+
+.pa-calendar .litepicker {
+  font-size: 0.9em !important;
+}
+
+.pa-form-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pa-form-group .pa-form-item:first-of-type {
+  margin-right: 1em;
+}
+
+.pa-form-item {
+  display: flex;
+  flex-direction: column;
+  padding: 1em 0;
+  flex: auto;
+}
+
+.pa-form-item input[type='text'],
+.pa-form-item select,
+.pa-form-item textarea {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.5em 1em;
+}
+
+#pa-country-code {
+  max-width: 200px;
+}
+
+.pa-form-item input[type='text']:focus-visible,
+.pa-form-item select:focus-visible,
+.pa-form-item textarea:focus-visible {
+  border: 1px solid var(--pa-hightlight-color);
+  box-shadow: none;
+  outline: none;
+}
+
+#pa-modal .pa-form-item input[type='submit']:disabled {
+  background-color: #ccc !important;
+  cursor: not-allowed !important;
+}
+
+.pa-phone-container div {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+#pa-sms-opt-in {
+  font-size: 11px;
+  width: 60%;
+  margin-top: 10px;
+}
+
+:root {
+  --pa-button-color: #2196f3;
+  --pa-hightlight-color: #048af7;
+  --litepicker-day-width: 49px !important;
+}
+
+.pa-calendar .litepicker .container__months {
+  box-shadow: none;
+}
+
+.pa-calendar .litepicker .container__days > div,
+.pa-calendar .litepicker .container__days > a {
+  padding: 15px 0;
+}
+
+/* .is-today::after {
+  content: ' ';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  margin-top: 13px;
+  background-color: grey;
+  border-radius: 50%;
+  transform: translate(-10px, 10px);
+}
+
+.is-today.is-start-date::after {
+  background-color: white;
+} */
+
+.litepicker .container__days .day-item.is-today {
+  color: initial;
+}
+
+.litepicker .container__days .day-item.is-today.is-locked {
+  color: var(--litepicker-is-locked-color);
+}
+
+.pa-has-timeslots #pa-timeslots {
+  display: flex;
+  opacity: 1;
+  animation-name: prolong;
+  animation-duration: 0.3s;
+}
+
+.pa-timeslots-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+#pa-back-to-calendar {
+  border: none !important;
+  height: 42px !important;
+  width: 42px !important;
+  padding-top: 5px !important;
+  padding-right: 4px !important;
+  background-color: transparent !important;
+}
+#pa-back-to-calendar img {
+  filter: brightness(200%);
+}
+
+@media (min-width: 955px) {
+  .pa-confirmation form,
+  .pa-custom-questions-modal form,
+  .pa-deposit-modal form {
+    max-height: 460px;
+    overflow-y: scroll;
+  }
+  .pa-has-timeslots {
+    max-width: 951px !important;
+  }
+  #pa-modal {
+    flex-wrap: nowrap;
+    max-height: 551px;
+  }
+  .pa-timeslots-header-container {
+    padding-top: 78px;
+  }
+  #pa-timeslots-list {
+    max-height: 406px;
+  }
+}
+@media (max-width: 954px) {
+  #pa-modal #pa-product-title .pa-merchant-logo {
+    margin: 0 auto;
+  }
+
+  #pa-timeslots-header {
+    margin-top: 0px;
+  }
+  #pa-modal {
+    justify-content: center;
+  }
+  .pa-booking-info {
+    width: 100%;
+    border-right: none;
+    gap: 15px;
+    border-bottom: 1px solid var(--text-color-level3, rgba(26, 26, 26, 0.1));
+    padding-bottom: 0;
+  }
+  #pa-modal h2,
+  #pa-modal h3,
+  #pa-modal h4,
+  #pa-modal h5 {
+    text-align: center !important;
+  }
+  #pa-modal h3,
+  .pa-timeslots-header-container {
+    margin-top: 30px !important;
+  }
+  h2#pa-product-title {
+    /* Avoid hitting the branding */
+    margin-left: 25px !important;
+    margin-right: 25px !important;
+  }
+  .pa-label {
+    justify-content: left;
+  }
+
+  .pa-note {
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+  .pa-timezone {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  #pa-timeslots-list {
+    height: 370px;
+  }
+  .pa-timeslot-picker {
+    margin-bottom: 20px;
+  }
+  #pa-variant-select {
+    margin: 0 auto;
+    display: block;
+  }
+  .pa-has-variant-picker #pa-note {
+    display: none !important;
+  }
+  .pa-has-variant-picker #litepicker {
+    min-height: 360px;
+    text-align: center;
+  }
+}
+
+@media (min-width: 769px) {
+  .pa-back-to-calendar {
+    display: none;
+  }
+  #pa-modal h4#pa-timeslots-header {
+    margin-top: 0px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  #pa-modal h4#pa-timeslots-header {
+    margin-top: 14px !important;
+  }
+
+  .pa-has-timeslots #pa-calendar {
+    display: none !important;
+  }
+
+  .pa-modal-background {
+    padding-top: 0px;
+  }
+  #pa-modal {
+    max-width: 480px;
+    justify-content: center;
+  }
+  .pa-booking-info,
+  .pa-timeslot-picker {
+    width: 100%;
+    padding: 0 10%;
+  }
+
+  #pa-timeslots {
+    width: 250px;
+  }
+
+  #pa-timeslots-list {
+    width: 250px;
+  }
+
+  .pa-timeslot-picker {
+    flex-direction: column;
+    align-items: center;
+  }
+  #pa-modal h3,
+  .pa-timeslots-header-container {
+    margin-top: 20px !important;
+  }
+
+  .pa-timeslots-header-container {
+    margin-bottom: 10px;
+    justify-content: flex-start;
+  }
+  .pa-timeslots-header-container h4 {
+    margin: 0px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .pa-booking-info {
+    gap: 10px;
+  }
+
+  #pa-modal .pa-mobile-close-button {
+    display: block;
+  }
+
+  #pa-modal input[type='submit'] {
+    margin-right: 0;
+  }
+
+  .pa-form-group .pa-form-item:first-of-type {
+    margin-right: auto;
+  }
+
+  #pa-timeslots-list {
+    max-height: 300px;
+  }
+  .pa-note {
+    margin-bottom: 20px;
+  }
+  :root {
+    --litepicker-day-width: 38px !important;
+  }
+  #pa-calendar {
+    width: 280px;
+  }
+}
+
+@keyframes prolong {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#pa-modal ::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+#pa-modal ::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.litepicker,
+.container__main,
+.container__months,
+.month-item {
+  width: 100% !important;
+}
+
+body .month-item {
+  padding: 5px !important;
+}
+
+body .litepicker .container__days > div,
+body .litepicker .container__days > a {
+  width: var(--litepicker-day-width) !important;
+}
+
+body .month-item-weekdays-row {
+  height: initial !important;
+  align-items: initial !important;
+  background-color: initial !important;
+}
+
+body .month-item-weekdays-row > div {
+  color: var(--litepicker-month-weekday-color);
+  flex-direction: initial;
+  flex: initial;
+  font-size: 1em !important;
+  max-width: initial;
+  padding: 5px 0px;
+  text-align: center;
+  text-transform: none;
+}
+
+body .litepicker .container__days .day-item {
+  height: initial;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+body .litepicker .container__days .day-item.is-start-date {
+  background-color: var(--litepicker-is-start-color-bg);
+}
+
+body .litepicker .container__days .day-item.is-in-range {
+  background-color: var(--litepicker-is-start-color-bg);
+  opacity: 0.6;
+}
+
+body .litepicker .container__days .day-item.is-end-date {
+  background-color: var(--litepicker-is-end-color-bg);
+}
+
+body .litepicker .container__days .day-item:hover {
+  color: var(--pa-hightlight-color);
+  -webkit-box-shadow: inset 0 0 0 1px var(--pa-hightlight-color);
+  box-shadow: inset 0 0 0 1px var(--pa-hightlight-color);
+}
+
+body .litepicker .container__days .day-item.is-locked {
+  color: var(--litepicker-is-locked-color);
+  opacity: 0.4;
+}
+
+#pa-variant-back-button svg {
+  fill: grey;
+}
+#pa-variant-back-button svg:hover {
+  fill: var(--litepicker-button-prev-month-color-hover);
+}
